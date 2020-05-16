@@ -27,11 +27,14 @@ module.exports = {
     new CopyWebpackPlugin([
       {from: Path.resolve(__dirname, '../assets'), to: 'assets'}
     ]),
+    new HtmlWebpackPlugin({
+      template: Path.resolve(__dirname, '../src/index.html'),
+    })
 
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
-    }))
+    // ...PAGES.map(page => new HtmlWebpackPlugin({
+    //   template: `${PAGES_DIR}/${page}`,
+    //   filename: `./${page.replace(/\.pug/,'.html')}`
+    // }))
   ],
   resolve: {
     alias: {
