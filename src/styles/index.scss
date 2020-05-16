@@ -10,10 +10,10 @@ html {
   color: $mainFontColor;
   height: 100%;
   min-width: $smPhoneWidth;
-  @media screen and (min-width: $phoneWidth) {
+  @media screen and (max-width: $phoneWidth) {
     font-size: 16px;
   }
-  @media screen and (min-width: $tableWidth) {
+  @media screen and (max-width: $tableWidth) {
     font-size: 18px;
   }
 }
@@ -57,15 +57,12 @@ li {
 section,
 .section {
   position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $smDesktopWidth) {
-    padding: 36px 0;
+  padding: 15px 0;
+  @media screen and (max-width: $phoneWidth) {
+  padding: 20px 0;
   }
   @media screen and (max-width: $tableWidth) {
     padding: 28px 0;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    padding: 20px 0;
   }
 }
 
@@ -73,32 +70,12 @@ section,
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
-  min-width: 100vh;
 }
 
 .content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
 }
 
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  min-width: $smPhoneWidth;
-  @media screen and (min-width: $phoneWidth) {
-    min-width: $tableWidth;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
-  }
+.text-block__header {
+  @include Playfair;
 }
-
-// Modules:
-// example: @import "modules/my-module.scss";
