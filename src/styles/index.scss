@@ -45,6 +45,7 @@ h6 {
 
 a {
   text-decoration: none;
+  color: $mainFontColor;
 }
 
 ul,
@@ -54,35 +55,154 @@ li {
   list-style-type: none;
 }
 
-section,
-.section {
-  position: relative;
-  padding: 15px 0;
-  @media screen and (max-width: $phoneWidth) {
-  padding: 20px 0;
-  }
-  @media screen and (max-width: $tableWidth) {
-    padding: 28px 0;
-  }
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
 .content-wrapper {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
+  padding: 25px 5px 21px;
 }
 
-.text-block__header {
-  @include Playfair;
+.m-btm-20 {
+  margin-bottom: 20px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.text-block {
+  display: flex;
+  justify-content: space-between;
+
+  &__header {
+    @include Playfair;
+    min-width: 173px;
+    margin-right: 19px;
+  }
 }
 
 .decor__line {
-  margin-top: 10px;
   width: 100%;
-  height: 100%;
-  border-bottom: 5px solid #000;
+  margin-top: 19px;
+  border-bottom: 2px solid #000;
 }
+
+.img__big {
+  position: relative;
+  @include size(100%, 202px);
+  background: no-repeat 0 0/contain url("/assets/img/_00001.jpg");
+  margin-bottom: 5px;
+}
+
+.date-block {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+
+  &__item {
+    position: absolute;
+  }
+
+  &_size {
+    margin: 6px;
+    width: 80px;
+    height: 53px;
+    opacity: 0.8;
+  }
+
+  &__text {
+    @include NotoSerif;
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+
+.img-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  grid-template-rows: repeat(auto-fill, min(48px));
+  grid-gap: 5px;
+}
+
+.img-block_size {
+  min-height: 48px;
+  min-width: 72px;
+}
+
+.adv-block {
+
+  &__url {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: (auto, min(80px));
+    margin: 10px 0;
+  }
+
+  &__text {
+    padding: 7px 0 0 19px;
+    background-color: $adv-bckg;
+
+    & .text_tint {
+      @include NotoSans-Bold;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: $tin-soldier;
+    }
+
+    & .text_bold {
+      @include NotoSans-Bold;
+      letter-spacing: 0.035em;
+    }
+
+    & .text {
+      @include NotoSans;
+      line-height: 1.55;
+      letter-spacing: 0.03em;
+    }
+  }
+}
+
+.pagination__nav {
+  margin-top: 19px;
+  margin-bottom: 21px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .pagination__item {
+      margin-right: 17px;
+      @include NotoSans;
+      font-size: 13px;
+      line-height: 1.38;
+      color: $black;
+
+      &_active {
+        @include size(34px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ddd;
+        border-radius: 50%;
+      }
+
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.text_bold {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+

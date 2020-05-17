@@ -14,7 +14,7 @@
 
 // size to one line
 @mixin size($width, $height: $width) {
-  width: $width;
+  min-width: $width;
   height: $height;
 }
 
@@ -37,7 +37,7 @@
 // mixin for fonts
 @mixin Playfair {
   font-family: PlayfairDisplay, serif;
-  font-size: 1.625rem;
+  font-size: 26px;
   line-height: 0.69;
   text-align: left;
   color: $vantablack;
@@ -45,7 +45,7 @@
 
 @mixin NotoSerif {
   font-family: NotoSerif, serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 1.29;
   text-align: center;
   color: $mainFontColor;
@@ -53,7 +53,7 @@
 
 @mixin NotoSans-Bold {
   font-family: NotoSans, sans-serif;
-  font-size: 0.813rem;
+  font-size: 13px;
   font-weight: bold;
   line-height: 1.38;
   text-align: left;
@@ -62,7 +62,7 @@
 
 @mixin NotoSans {
   font-family: NotoSans, sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   line-height: 1.33;
   text-align: left;
   color: $mainFontColor;
