@@ -14,7 +14,7 @@
 
 // size to one line
 @mixin size($width, $height: $width) {
-  min-width: $width;
+  width: $width;
   height: $height;
 }
 
