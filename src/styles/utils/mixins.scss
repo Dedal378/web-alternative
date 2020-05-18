@@ -46,13 +46,13 @@
 @mixin NotoSerif {
   font-family: NotoSerif, serif;
   font-size: 14px;
-  line-height: 1.29;
+  line-height: 1.33;
   text-align: center;
   color: $mainFontColor;
 }
 
 @mixin NotoSans-Bold {
-  font-family: NotoSans, sans-serif;
+  font-family: NotoSansBold, sans-serif;
   font-size: 13px;
   font-weight: bold;
   line-height: 1.38;

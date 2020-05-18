@@ -70,6 +70,10 @@ li {
   flex-direction: column;
 }
 
+.text_bold {
+  font-weight: bold;
+}
+
 .text-block {
   display: flex;
   justify-content: space-between;
@@ -87,21 +91,11 @@ li {
   border-bottom: 2px solid #000;
 }
 
-.img__big {
+.img-big {
   position: relative;
   @include size(100%, 202px);
   background: no-repeat 0 0/contain url("/assets/img/_00001.jpg");
   margin-bottom: 5px;
-}
-
-.date-block {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-
-  &__item {
-    position: absolute;
-  }
 
   &_size {
     margin: 6px;
@@ -109,55 +103,74 @@ li {
     height: 53px;
     opacity: 0.8;
   }
+}
+
+.date-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 
   &__text {
     @include NotoSerif;
-    font-size: 18px;
-    line-height: 1;
+
+    & span {
+      font-size: 16px;
+    }
   }
 }
 
 .img-block {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-  grid-template-rows: repeat(auto-fill, min(48px));
+  grid-template-columns: repeat(auto-fit, minmax(73px, 1fr));
+  grid-template-rows: repeat(auto-fill, min(50px));
   grid-gap: 5px;
-}
+  margin-bottom: 10px;
 
-.img-block_size {
-  min-height: 48px;
-  min-width: 72px;
+  &__button {
+    position: absolute;
+    top: 13px;
+    right: 6px;
+  }
+
+  &_size {
+    position: relative;
+    min-height: 48px;
+    min-width: 72px;
+  }
+
+  & span {
+    font-size: 18px;
+    line-height: 1.1;
+  }
 }
 
 .adv-block {
+  margin-bottom: 10px;
 
   &__url {
     display: grid;
     grid-template-columns: 100px 1fr;
     grid-template-rows: (auto, min(80px));
-    margin: 10px 0;
   }
 
   &__text {
-    padding: 7px 0 0 19px;
+    padding: 4px 0 0 19px;
     background-color: $adv-bckg;
 
     & .text_tint {
       @include NotoSans-Bold;
       font-size: 10px;
-      letter-spacing: 0.04em;
       color: $tin-soldier;
     }
 
     & .text_bold {
       @include NotoSans-Bold;
-      letter-spacing: 0.035em;
     }
 
     & .text {
       @include NotoSans;
-      line-height: 1.55;
-      letter-spacing: 0.03em;
+      margin-top: 2px;
     }
   }
 }
@@ -172,17 +185,17 @@ li {
     align-items: center;
 
     .pagination__item {
-      margin-right: 17px;
+      @include size(34px);
       @include NotoSans;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 13px;
       line-height: 1.38;
       color: $black;
 
       &_active {
         @include size(34px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background-color: #ddd;
         border-radius: 50%;
       }
@@ -193,16 +206,3 @@ li {
     }
   }
 }
-
-.text_bold {
-  font-weight: bold;
-}
-
-
-
-
-
-
-
-
-
