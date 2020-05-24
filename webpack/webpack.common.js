@@ -28,14 +28,14 @@ module.exports = {
       {from: Path.resolve(__dirname, '../assets'), to: 'assets'}
     ]),
     // закомментировать блок, если используешь pug
-    new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html'),
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: Path.resolve(__dirname, '../src/index.html'),
+    // }),
     // раскомментировать блок, если используешь pug
-    // ...PAGES.map(page => new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/${page}`,
-    //   filename: `./${page.replace(/\.pug/,'.html')}`
-    // }))
+    ...PAGES.map(page => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/${page}`,
+      filename: `./${page.replace(/\.pug/,'.html')}`
+    }))
   ],
   resolve: {
     alias: {
